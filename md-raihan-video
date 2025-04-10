@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Raihan - Text to Video Generator</title>
+    <style>
+        /* CSS Styles */
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f0f23;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #text-input {
+            width: 80%;
+            padding: 12px;
+            margin: 20px 0;
+            background: #1a1a2f;
+            border: 2px solid #3f3f7a;
+            color: #fff;
+            font-size: 16px;
+        }
+        #generate-btn {
+            padding: 12px 24px;
+            background: #4CAF50;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #video-output {
+            margin-top: 20px;
+            background: #000;
+            padding: 10px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AI Text-to-Video Generator</h1>
+        <input type="text" id="text-input" placeholder="Enter your text (e.g., 'A spaceship flying through a galaxy')">
+        <button id="generate-btn">Generate Video</button>
+        <div id="video-output">
+            <!-- Video will be embedded here -->
+        </div>
+    </div>
+
+    <script>
+        // Simulate video generation using a placeholder API (replace with a real API later)
+        document.getElementById('generate-btn').addEventListener('click', async () => {
+            const text = document.getElementById('text-input').value;
+            if (!text) {
+                alert('Please enter text!');
+                return;
+            }
+
+            // Simulate API call (replace with actual API endpoint)
+            const videoOutput = document.getElementById('video-output');
+            videoOutput.innerHTML = '<p>Generating video... (This is a simulation)</p>';
+
+            setTimeout(() => {
+                videoOutput.innerHTML = `
+                    <video width="600" controls>
+                        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <p>Video generated from: "${text}"</p>
+                `;
+            }, 2000);
+        });
+    </script>
+</body>
+</html>
